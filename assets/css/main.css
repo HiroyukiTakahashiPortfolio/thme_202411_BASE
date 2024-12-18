@@ -1,0 +1,460 @@
+/* ==========================================
+   基本スタイル
+========================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fdfdfd;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* ==========================================
+   ヘッダー
+========================================== */
+header {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 縦方向の中央揃え */
+  background-color: #ffffff; /* 背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* シャドウ効果 */
+  position: sticky; /* スクロールしても固定 */
+  top: 0;
+  z-index: 10;
+  height: 80px; /* 高さ調整 */
+  padding: 0 20px;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-between; /* ロゴとメニューの配置 */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* 最大幅を設定 */
+}
+
+.logo img {
+  height: 50px; /* ロゴの高さ */
+}
+
+/* ==========================================
+   ナビゲーションメニュー
+========================================== */
+nav ul {
+  list-style: none; /* リストのドットを削除 */
+  margin: 0;
+  padding: 0;
+  display: flex; /* 横並びにする */
+}
+
+nav ul li {
+  margin-left: 20px; /* 各リスト項目の間隔 */
+}
+
+nav ul li a {
+  display: block; /* クリック範囲を広げる */
+  padding: 10px 15px; /* 内側の余白 */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  text-decoration: none; /* 下線を削除 */
+  transition: color 0.3s ease, background-color 0.3s ease; /* アニメーション */
+}
+
+nav ul li a:hover {
+  color: #e91e63; /* ホバー時の文字色 */
+  background-color: #f8f8f8; /* ホバー時の背景色 */
+  border-radius: 5px; /* 角を丸く */
+}
+
+/* ==========================================
+   レスポンシブ対応
+========================================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* スマホでは縦並び */
+    background-color: #fff; /* 背景色 */
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* 初期は非表示 */
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    border-bottom: 1px solid #eee; /* 項目の区切り線 */
+  }
+
+  /* ハンバーガーメニュー用 */
+  .menu-toggle {
+    display: block; /* ボタン表示 */
+    cursor: pointer;
+  }
+
+  nav ul.active {
+    display: flex; /* メニューを表示 */
+  }
+}
+
+
+/* メインスライダーのスタイル */
+.main-slider {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像の比率を維持しつつトリミング */
+}
+
+
+/* ==========================================
+ ヒーローセクション
+========================================== */
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ==========================================
+ セクション
+========================================== */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.section .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #e91e63;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.section .button:hover {
+  background-color: #d81b60;
+}
+
+/* ==========================================
+ 記事・ブログ
+========================================== */
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+}
+
+.article img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 15px;
+}
+
+.article-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.article-content p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ==========================================
+ フッター
+========================================== */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   ポートフォリオグリッドのスタイル
+========================================== */
+.portfolio-grid {
+  padding: 40px 20px; /* セクションの余白 */
+  background-color: #f9f9f9; /* 背景色 */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid; /* グリッドレイアウトを使用 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動調整 */
+  gap: 20px; /* カード間の余白 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background-color: #fff; /* カードの背景色 */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* コンテンツのはみ出しを隠す */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影 */
+}
+
+.portfolio-card img {
+  width: 100%; /* 画像をカード幅に合わせる */
+  height: 200px; /* 高さを固定 */
+  object-fit: cover; /* 画像の比率を保ちながらトリミング */
+}
+
+.portfolio-title {
+  margin: 15px 10px 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #333;
+}
+
+.portfolio-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-title a:hover {
+  color: #e91e63; /* アクセントカラー（ピンク） */
+}
+
+.portfolio-excerpt {
+  margin: 0 10px 15px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+}
+
+/* ==========================================
+ レスポンシブ対応
+========================================== */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* スマホでは1カラム表示 */
+  }
+}
+
+
+/* ==========================================
+ レスポンシブ対応
+========================================== */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav ul {
+      margin-top: 10px;
+  }
+
+  nav ul li {
+      margin: 5px 0;
+  }
+
+  .hero h1 {
+      font-size: 2rem;
+  }
+
+  .section {
+      padding: 40px 10px;
+  }
+
+  .article-list {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* ==========================================
+   ブログページ用スタイル
+========================================== */
+.blog-posts {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-posts h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 投稿カードデザイン */
+.post-list article {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.post-list article:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.post-list article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.post-list article h2 {
+  font-size: 1.5rem;
+  margin: 15px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.post-list article h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-list article h2 a:hover {
+  color: #e91e63; /* アクセントカラー */
+}
+
+.post-list article p {
+  margin: 0 15px 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ページネーション */
+.blog-posts .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.blog-posts .pagination a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #555;
+  background: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.blog-posts .pagination a:hover {
+  background: #e91e63;
+  color: #fff;
+}
+
+.blog-posts .pagination .current {
+  background: #e91e63;
+  color: #fff;
+  border-color: #e91e63;
+}

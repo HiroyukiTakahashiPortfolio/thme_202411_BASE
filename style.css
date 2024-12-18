@@ -1,0 +1,15 @@
+/* 
+
+Theme Name: 202411_BASE
+Description: ワードプレステーマsasattです。
+Version: 1.0
+Author: Takahashi 
+
+*/
+
+
+.profile img {
+    width: 100% !important;
+    max-width: 150px !important;
+    height: auto !important;
+}
